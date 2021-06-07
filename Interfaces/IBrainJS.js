@@ -12,7 +12,6 @@ export class AI {
     Train(input, eoutput) {
         input = this.ToArray(input);
         eoutput = this.ToArray(eoutput);
-
         this.Network.train([
             { input: input, output: eoutput }
         ]);
@@ -20,25 +19,17 @@ export class AI {
 
     Run(input) {
         input = this.ToArray(input);
-
         return this.Network.run(input);
     }
 
     ToSvg(id) {
         const diagram = document.getElementById(id);
-        console.log(diagram);
-        if(diagram)
-        { 
-            console.log(this.Network);
-            diagram.innerHTML = brain.utilities.toSVG(this.Network);
-        }
-        else
-        {
-            console.log("The id : " + id + " : is invalid."); 
-        }
+        diagram ? diagram.innerHTML = brain.utilities.toSVG(this.Network) :
+            console.log("The id : " + id + " : is invalid.");
     }  
 
     ToArray(arr) {
         return (!Array.isArray(arr)) ? arr = [arr] : arr;
     }
+    
 }

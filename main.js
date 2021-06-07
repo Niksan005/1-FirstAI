@@ -4,6 +4,8 @@ let net = new Game.Lib.IBrain.AI([8, 4]);
 
 net.Train([0, 0, 1], [2]);
 
+console.log(net.Run([1,1,0]));
+
 net.ToSvg("diagram");
 
 //console.log(net.Run([1, 0, 0, 1]));
