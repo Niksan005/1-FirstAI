@@ -26,9 +26,17 @@ export class AI {
 
     ToSvg(id) {
         const diagram = document.getElementById(id);
-        diagram ? diagram.innerHTML = brain.utilities.toSVG(this.Network) :
-            console.log("The id : " + id + " : is invalid.");
-    }
+        console.log(diagram);
+        if(diagram)
+        { 
+            console.log(this.Network);
+            diagram.innerHTML = brain.utilities.toSVG(this.Network);
+        }
+        else
+        {
+            console.log("The id : " + id + " : is invalid."); 
+        }
+    }  
 
     ToArray(arr) {
         return (!Array.isArray(arr)) ? arr = [arr] : arr;

@@ -1,4 +1,5 @@
 import * as lib from "./IndexMapping.js"
+import * as lib2 from "../Interfaces/LoadInterfaces.js"
 
 class Player {
 
@@ -14,4 +15,4 @@ class Player {
     }
 }
 
-export { Player, lib };
+export { Player, lib, lib2 };
